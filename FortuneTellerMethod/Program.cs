@@ -18,10 +18,6 @@ namespace FortuneTellerMethod
 
 
 
-
-
-
-
             Console.WriteLine("What is your first name?");
             firstName = Console.ReadLine().ToUpper();
             Console.WriteLine("What is your last name?");
@@ -53,15 +49,17 @@ namespace FortuneTellerMethod
 
 
 
+            Console.WriteLine(Greeting(firstName, lastName) + " will retire in " + Retire(age) + " with "
+                + Money(birthMonth) + " in the bank, a vacation home in " + Vacation(siblings) + " and a "
+                + Vehicle(favColor) + " \n");
 
+            Judgement();
 
-
-
-
-            Console.WriteLine(Retire(age));
-            Console.WriteLine(Vacation(siblings));
-            Console.WriteLine(Vehicle(favColor));
-            Console.WriteLine(Money(birthMonth));
+           //Console.WriteLine(Retire(age));
+           // Console.WriteLine(Vacation(siblings));
+           // Console.WriteLine(Vehicle(favColor));
+           // Console.WriteLine(Money(birthMonth));
+           // Judgement();
         }
 
         static string Greeting(string first, string last)
@@ -165,6 +163,21 @@ namespace FortuneTellerMethod
                 retireMoney = 0.00;
             }
             return retireMoney;
+        }
+
+        static void Judgement()
+        {
+            int i;
+            Random r = new Random();
+            string[] rJudge = new string[3];
+
+            rJudge[0] = "Your Fortune is Amazing";
+            rJudge[1] = "Things Look Great";
+            rJudge[2] = "You could definately do better";
+
+            i = r.Next(0, 3);
+
+            Console.WriteLine(rJudge[i]);
         }
     }
 }
